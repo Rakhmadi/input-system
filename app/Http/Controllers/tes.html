@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div class="met" >
+        <p v-text="data"></p>
+        <div v-html="fot"></div>
+        {{io}}
+        <button v-on:clink="hit"></button>
+    </div>
+</body>
+<script>
+  var app = new Vue({
+      el:'.met',
+      data:{
+          data:'hello',
+          fot:'<h2>hello</h2>',
+          b1:'3',
+          b2:'10'
+
+      }
+      ,
+      computed:{
+          jumlah: function(){
+              return this.b1 + this.b2
+          },
+          methods:{
+              hit(){
+                return this.io =this.b1 + this.b2
+              }
+          }
+
+      }
+  });
+</script>
+</html>
